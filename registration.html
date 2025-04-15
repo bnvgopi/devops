@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #ede8e8;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px 0px gray;
+            width: 300px;
+        }
+        label, input {
+            display: block;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background: blue;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background: darkblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Register</h2>
+        <form id="registrationForm">
+            <label for="full">Full Name</label>
+            <input type="text" id="full" required>
+
+            <label for="userName">Username</label>
+            <input type="text" id="userName" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" required>
+
+            <label for="phn">Phone Number</label>
+            <input type="tel" id="phn">
+
+            <label for="psw">Password</label>
+            <input type="password" id="psw" required>
+
+            <label for="cpsw">Confirm Password</label>
+            <input type="password" id="cpsw" required>
+
+            <label>Gender</label>
+            <input type="radio" id="dt1" name="gender" value="dt1"> Male
+            <input type="radio" id="dt2" name="gender" value="dt2"> Female
+            <input type="radio" id="dt3" name="gender" value="dt3"> Other
+
+            <button type="submit">Submit</button>
+        </form>
+        <p id="msg"></p>
+    </div>
+
+    <script>
+        document.getElementById("registrationForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+            alert("Form submitted successfully!");
+            document.getElementById("msg").textContent = "Registration successful!";
+        });
+    </script>
+</body>
+</html>
